@@ -1,0 +1,24 @@
+
+  SERVER CONFIGURATION :                                                     
+  
+  Hostname       : <%= node['hostname'] %>
+  <% if node['os'] == 'solaris2' -%>                                                                          
+  OS             : Solaris <%= node['os_version'] %>
+  <% else -%>
+  <% if node['os'] == 'linux' -%>
+  OS             : <%= node['platform_family'].upcase %> <%= node['platform_version'] %> (<%= node['platform'] %>)
+  <% else -%>
+  OS             : <%= node['platform_family'].upcase %> <%= node['platform_version'] %> (<%= node['aixcustom']['oslevel'] %>)
+  Memory         : <%= node['aixcustom']['memory'] %> MB
+  <% end -%>
+  <% end -%>
+  Number of CPUs : <%= node['cpu']['real'] %>                                 
+  Uptime         : <%= node['uptime'].split(' ')[0] %> <%= node['uptime'].split(' ')[1] %>
+  Environment    : <%= node.environment %>
+  Server Role    : <%= node['roles'][1] %> <%= node['roles'][2] %>
+  Datacenter     : <%= node['datacenter'] %>
+
+ +----------------------------------------------------------------------------+
+ !  WARNING : This server is managed by Chef                                  !
+ +----------------------------------------------------------------------------+
+
