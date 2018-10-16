@@ -1,5 +1,3 @@
-file '/tmp/myrole' do
-  owner 'root'
-  mode '0644'
-  content "#{node['myroleattr']}"
+log "Hello my role attribute = #{node['myroleattr']}" do
+  level :info
 end
