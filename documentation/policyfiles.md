@@ -12,7 +12,7 @@ how to generate a policy :
   - enter 'run_list'
   - You can add attrs per "environment"/polgroups like 
     default['qa'] = { myapp: { database: 'qadbserver01' }} and refer it in cookbooks by node[Chef::Config.policy_group][myapp][database]
-- <edit your Policyfile.rb>
+- edit your Policyfile.rb
 - chef install Policyfile.rb (equals Berks install)
   - This will create some extra files in your Policyfile dir (mostly a cookbook dir)
   - This will install all deps
@@ -20,7 +20,7 @@ how to generate a policy :
 - push to Chef server :
   - chef push qa Policyfile.rb
   - or promote it via file : 
-    - chef expoert Poliyfile.rb . -a
+    - chef export Poliyfile.rb . -a
     - chef push-archive qa Policy-xxx.tar.gz
   - knife bootstrap mywebserver --policy-group qa --policy-name webserver
   - via file : policy_name: webserver, policy_group: qa and chef-client -j attrs.json
