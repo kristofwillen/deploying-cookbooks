@@ -5,7 +5,7 @@ cookbook_file '/etc/ssh/ssh-banner' do
   action :create
 end
 
-replace '/etc/ssh/sshd-config' do
+replace '/etc/ssh/sshd_config' do
   replace "#Banner none"
   with    "Banner /etc/ssh/ssh-banner"
   notifies :restart, 'service[sshd]', :immediately

@@ -5,5 +5,5 @@ license 'All Rights Reserved'
 description 'Installs/Configures unix_common-config'
 long_description 'Installs/Configures unix_common-config'
 depends 'patch'
-version '0.3.1'
+version '0.3.2'
 
